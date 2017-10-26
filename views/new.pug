@@ -4,24 +4,28 @@ html
         script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
     body
         form(method='post', action='/new')
-        | First name: 
-        input#firstname(type='text', name='firstName', placeholder='e.g Mickey')
-        br
-        | Last name: 
-        input#lastname(type='text', name='lastName', placeholder='e.g Mouse')
-        br
-        | Email:    
-        input#email(type='email', name='email', placeholder='e.g mickeymouse@gmail.com')
-        input#button(type='submit', value='Submit')
+            | First name: 
+            input#firstname(type='text', name='firstname', placeholder='e.g Mickey')
+            br
+            | Last name: 
+            input#lastname(type='text', name='lastname', placeholder='e.g Mouse')
+            br
+            | Email:    
+            input#email(type='email', name='email', placeholder='e.g mickeymouse@gmail.com')
+            input#button(type='submit', value='Submit')
         script.
-            $("#button").click(function() {
-            var newUser = {
-            firstname: $("#firstname").val(),
-            lastname: $("#lastname").val(),
-            email:  $("#email").val()
-            }
-            $.post("/new", newUser, function (response){
-                })
-            })
+            //- $("#button").click(function() {
+            //- var newUser = {
+            //- firstname: $("#firstname").val(),
+            //- lastname: $("#lastname").val(),
+            //- email:  $("#email").val()
+            //- }
+            //- $.post("/new", newUser, function (response){
+            // alert('hurray a new user was added')
+            //-     })
+            //- })
         p
             a(href='/') If you want to search, click here
+
+        p
+            a(href='/users') To see all my users, click here
