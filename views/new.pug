@@ -14,16 +14,18 @@ html
             input#email(type='email', name='email', placeholder='e.g mickeymouse@gmail.com')
             input#button(type='submit', value='Submit')
         script.
-            //- $("#button").click(function() {
-            //- var newUser = {
-            //- firstname: $("#firstname").val(),
-            //- lastname: $("#lastname").val(),
-            //- email:  $("#email").val()
-            //- }
-            //- $.post("/new", newUser, function (response){
-            // alert('hurray a new user was added')
-            //-     })
-            //- })
+            $("#button").click(function() {
+            var newUser = {
+            firstname: $("#firstname").val(),
+            lastname: $("#lastname").val(),
+            email:  $("#email").val()
+            }
+            console.log(newUser);
+            $.post("/new", newUser, function (response){
+            alert('hurray a new user was added')
+            })
+            });
+          
         p
             a(href='/') If you want to search, click here
 

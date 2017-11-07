@@ -1,67 +1,24 @@
 doctype html
 html
   head
-    title Search Box Example 1
-    meta(name='ROBOTS', content='NOINDEX, NOFOLLOW')
-    // CSS styles for standard search box
-    style(type='text/css').
-      #tfheader{
-      background-color:#c3dfef;
-      }
-      #tfnewsearch{
-      float:left;
-      padding:20px;
-      }
-      .tftextinput{
-      margin: 0;
-      padding: 5px 15px;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size:14px;
-      border:1px solid #0076a3; border-right:0px;
-      border-top-left-radius: 5px 5px;
-      border-bottom-left-radius: 5px 5px;
-      }
-      .tfbutton {
-      margin: 0;
-      padding: 5px 15px;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size:14px;
-      outline: none;
-      cursor: pointer;
-      text-align: center;
-      text-decoration: none;
-      color: #ffffff;
-      border: solid 1px #0076a3; border-right:0px;
-      background: #0095cd;
-      background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
-      background: -moz-linear-gradient(top,  #00adee,  #0078a5);
-      border-top-right-radius: 5px 5px;
-      border-bottom-right-radius: 5px 5px;
-      }
-      .tfbutton:hover {
-      text-decoration: none;
-      background: #007ead;
-      background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
-      background: -moz-linear-gradient(top,  #0095cc,  #00678e);
-      }
-      /* Fixes submit button height problem in Firefox */
-      .tfbutton::-moz-focus-inner {
-      border: 0;
-      }
-      .tfclear{
-      clear:both;
-      }
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+    script(src="users.js")
+    link(rel='stylesheet', href='style.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto')
   body
-    h1(style='color:black;') This is my User Info app 
-    p
-      | If you would like to search a user, type him/her firstname or lastname in the search bar and press the button
-    #tfheader
-      form#tfnewsearch(method='get', action='/search')           
-        input.tftextinput(type='text', name='q', size='21', maxlength='120')
-        input.tfbutton(type='submit', value='search')
-      .tfclear
-    p
-      a(href='/users') To see all my users, click here
+    p If you would like to search a user, type him/her firstname or lastname in the search bar and press the button
+    div#wrapper
+      div#first 
+        a(href='/users') To see all my users, click here
+      div#second
+        a(href='/new') If you want to be my user, click here!
+    form.searchbar(method="get" action="/input")
+      input.username(type='text', name ='input' placeholder='Who are you looking for?')
+      div.matches
+      input.button(type='submit', value='search')
+      
+      
+      //- div.searchbar
         
-    p 
-      a(href='/new') If you want to be my user, click here!
+        
+    
