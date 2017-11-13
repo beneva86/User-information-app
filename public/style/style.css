@@ -87,14 +87,22 @@ input {
 	max-height: 330px;
 	overflow: auto;
 	border-top: 1px solid #f4f4f4;
-  background: #f2f2f2;
+  background: #b5b1b1;
 }
 
 .matches.open {
 	display: block;
 }
 
-.matches div {
+.listofmatches {
+  list-style: none;
+  width: 70%;
+/*  background-color: #043d4b;*/
+  padding: 0px;
+}
+}
+
+.matches ul {
 	padding: 20px 10px;
 	font-size: 13px;
 	cursor: pointer;
